@@ -11,21 +11,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td class="col-md-4">03/28/2016</td>
-      <td class="col-md-4">Booked</td>
-      <td class="col-md-4">13</td>
-    </tr>
-    <tr>
-      <td class="col-md-4">03/28/2016</td>
-      <td class="col-md-4">REGGIE</td>
-      <td class="col-md-4">17</td>
-    </tr>
-    <tr>
-      <td class="col-md-4">03/28/2016</td>
-      <td class="col-md-4">REDCap</td>
-      <td class="col-md-4">23</td>
-    </tr>
+    <% @reports.each do |report| %>
+      <tr>
+        <td class="col-md-4"><%= report.date %></td>
+        <td class="col-md-4"><%= report.source %></td>
+        <td class="col-md-4"><%= report.entry_count || 0 %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
